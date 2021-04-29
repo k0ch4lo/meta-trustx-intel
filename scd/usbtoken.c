@@ -200,7 +200,7 @@ produceKey(usbtoken_t *token, unsigned char *label, size_t label_len, unsigned c
 	if ((authenticateUser(token->ctn, token->auth_code, token->auth_code_len)) < 0) {
 		// this should not possibly happen; TODO: handle properly if it happens anyway
 		ERROR("Failed to authenticate to token");
-		return -1;
+		return -2;
 	}
 
 	if ((NULL == label) || (0 == label_len)) {
@@ -212,7 +212,7 @@ produceKey(usbtoken_t *token, unsigned char *label, size_t label_len, unsigned c
 
 	if (rc < 0) {
 		ERROR("USBTOKEN: deriveKey failed");
-		return rc;
+		return -1;
 	}
 
 	return 0;
@@ -630,7 +630,6 @@ usbtoken_unwrap_key(usbtoken_t *token, unsigned char *label, size_t label_len,
 	rc = produceKey(token, label, label_len, key, sizeof(key));
 	if (rc < 0) {
 		ERROR("Failed to get derived key from usbtoken");
-		rc = -1;
 		goto out;
 	}
 
