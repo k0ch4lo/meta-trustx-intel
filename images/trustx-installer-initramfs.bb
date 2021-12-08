@@ -7,7 +7,6 @@ PACKAGE_INSTALL = "\
 	base-passwd \
 	shadow \
 	mingetty \
-	libselinux \
 	cmld \
 	service-static \
 	control \
