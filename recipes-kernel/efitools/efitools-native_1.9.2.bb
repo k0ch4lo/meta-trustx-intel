@@ -49,6 +49,11 @@ EXTRA_OEMAKE = "\
 	'LDFLAGS = ${LIBRARY_FLAGS}' \
 "
 
+# Due to their build system structure, efitools do not recognize
+# the shared libraries residing in recipe-sysroot-native. To give
+# a hint to the dynmic loader, we manually set LD_LIBRARY_PATH.
+export LD_LIBRARY_PATH = "${STAGING_LIBDIR}"
+
 do_compile() {
 	oe_runmake ${BINARIES}
 	oe_runmake ${EFIFILES}
