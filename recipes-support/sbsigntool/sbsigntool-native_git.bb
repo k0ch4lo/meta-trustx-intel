@@ -36,7 +36,7 @@ S = "${WORKDIR}/git"
 
 inherit native autotools pkgconfig
 
-do_configure_prepend() {
+do_configure:prepend() {
 	cd ${S}
 
 	sed -i s#RECIPE_SYSROOT#${RECIPE_SYSROOT_NATIVE}#g configure.ac

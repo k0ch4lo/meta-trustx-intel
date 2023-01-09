@@ -43,7 +43,7 @@ export IMAGE_BASENAME = "trustx-installer-initramfs"
 IMAGE_FSTYPES = "${INITRAMFS_FSTYPES}"
 inherit image
 
-IMAGE_FEATURES_remove += "package-management"
+IMAGE_FEATURES:remove += "package-management"
 
 IMAGE_ROOTFS_SIZE = "4096"
 
@@ -62,10 +62,10 @@ update_modules_dep () {
 	sh -c 'cd "${IMAGE_ROOTFS}" && depmod --basedir "${IMAGE_ROOTFS}" --config "${IMAGE_ROOTFS}/etc/depmod.d" ${KERNELVERSION}'
 }
 
-ROOTFS_POSTPROCESS_COMMAND_append = " update_modules_dep; "
+ROOTFS_POSTPROCESS_COMMAND:append = " update_modules_dep; "
 
 # For debug purpose allow login if debug-tweaks is set in local.conf
-ROOTFS_POSTPROCESS_COMMAND_append = '${@bb.utils.contains_any("EXTRA_IMAGE_FEATURES", [ 'debug-tweaks' ], " update_inittab ; ", "",d)}'
+ROOTFS_POSTPROCESS_COMMAND:append = '${@bb.utils.contains_any("EXTRA_IMAGE_FEATURES", [ 'debug-tweaks' ], " update_inittab ; ", "",d)}'
 
 inherit extrausers
 EXTRA_USERS_PARAMS = '${@bb.utils.contains_any("EXTRA_IMAGE_FEATURES", [ 'debug-tweaks' ], "usermod -P root root; ", "",d)}'

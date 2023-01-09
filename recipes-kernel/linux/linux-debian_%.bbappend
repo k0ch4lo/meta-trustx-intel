@@ -6,6 +6,6 @@ SRC_URI += " \
 	file://qemu.cfg \
 "
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/linux-debian:${THISDIR}/generic:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/linux-debian:${THISDIR}/generic:"
 
-#KBUILD_DEFCONFIG_genericx86-64 := "${THISDIR}/generic/defconfig"
+#KBUILD_DEFCONFIG:genericx86-64 := "${THISDIR}/generic/defconfig"

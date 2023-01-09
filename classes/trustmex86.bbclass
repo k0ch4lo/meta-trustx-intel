@@ -62,10 +62,10 @@ do_uefi_bootpart () {
 }
 
 
-IMAGE_CMD_trustmex86 () {
+IMAGE_CMD:trustmex86 () {
 	bbnote  "Using standard trustme partition"
 	do_build_trustmeimage
 }
 
-addtask do_uefi_bootpart before IMAGE_CMD_trustmex86
+addtask do_uefi_bootpart before IMAGE_CMD:trustmex86
 #addtask do_build_trustmeimage after do_uefi_bootpart

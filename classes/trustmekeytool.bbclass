@@ -26,7 +26,7 @@ do_image_trustmekeytool[depends] = " \
     pki-native:do_populate_sysroot \
 "
 
-IMAGE_CMD_trustmekeytool () {
+IMAGE_CMD:trustmekeytool () {
 	if [ -z "${DEPLOY_DIR_IMAGE}" ];then
 		bbfatal "Cannot get bitbake variable \"DEPLOY_DIR_IMAGE\""
 		exit 1

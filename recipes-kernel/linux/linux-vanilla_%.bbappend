@@ -5,4 +5,4 @@ SRC_URI += " \
     file://qemu.cfg \
 "
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/generic:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/generic:"

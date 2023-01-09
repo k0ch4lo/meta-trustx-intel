@@ -1,7 +1,7 @@
 SUMMARY = "init script to start trustx environment"
 LICENSE = "MIT"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 SRC_URI = "file://cml-installer-script.sh"
 
@@ -16,7 +16,7 @@ do_install() {
         mknod -m 622 ${D}/dev/tty0 c 4 0
 }
 
-FILES_${PN} += " /init /dev "
+FILES:${PN} += " /init /dev "
 
 # Due to kernel dependency
 PACKAGE_ARCH = "${MACHINE_ARCH}"

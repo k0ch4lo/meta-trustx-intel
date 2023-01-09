@@ -94,10 +94,10 @@ do_image_trustmeinstaller[depends] = " \
     virtual/kernel:do_deploy \
 "
 
-IMAGE_CMD_trustmeinstaller[deptask] += " do_installer_bootpart "
+IMAGE_CMD:trustmeinstaller[deptask] += " do_installer_bootpart "
 
 
-IMAGE_CMD_trustmeinstaller () {
+IMAGE_CMD:trustmeinstaller () {
 
 	if [ -z "${INSTALLER_BOOTPART_DIR}" ];then
 		bbfatal_log "Cannot get bitbake variable \"INSTALLER_BOOTPART_DIR\""
