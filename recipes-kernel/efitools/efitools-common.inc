@@ -2,7 +2,7 @@ SUMMARY = "efitools"
 DESCRIPTION = "EFI tools to generate an deploy platform keys"
 HOMEPAGE = "https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/"
 SECTION = "console/tools"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=e28f66b16cb46be47b20a4cdfe6e99a1"
 

@@ -6,7 +6,7 @@ DEPENDS= "efitools-native"
 
 IMAGE_LINUGUAS = " "
 
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 
 IMAGE_FEATURES = ""
 
